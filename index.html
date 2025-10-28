@@ -243,6 +243,7 @@
         .card:nth-child(3) { animation-delay: 0.4s; }
         .card:nth-child(4) { animation-delay: 0.5s; }
         .card:nth-child(5) { animation-delay: 0.6s; }
+        .card:nth-child(6) { animation-delay: 0.7s; } 
         
         @keyframes cardAppear {
             from {
@@ -340,7 +341,7 @@
         .management-card {
             background: linear-gradient(145deg, #2c3e50 0%, #34495e 100%);
             border-radius: 15px;
-            padding: 45px 20px 30px 20px; /* <--- هذا هو السطر الذي تم تعديله */
+            padding: 40px 20px 30px 20px; /* <--- تم تحريك النص لأسفل */
             text-align: center;
             position: relative;
             border: 2px solid #DAA520;
@@ -356,13 +357,13 @@
         .management-card::before {
             content: '❖';
             position: absolute;
-            top: -15px;
+            top: -10px;         /* <--- تم تعديل الموقع */
             left: 50%;
             transform: translateX(-50%);
-            font-size: 2rem;
+            font-size: 1.2rem;   /* <--- تم تصغير الأيقونة */
             color: #DAA520;
             background: #2c3e50;
-            padding: 0 15px;
+            padding: 0 8px;      /* <--- تم تعديل الحشوة */
         }
         
         .management-role {
@@ -500,6 +501,16 @@
                 <h2 id="links-title" class="section-title">الروابط الرسمية</h2>
                 
                 <div class="cards-grid">
+                    
+                    <a href="https://umis.alexu.edu.eg/umisapp/registration/ed_login.aspx" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="card primary" 
+                       aria-label="رابط تسجيل المواد ومعرفة المصاريف">
+                        <div class="card-icon" aria-hidden="true">📝</div>
+                        <h3 class="card-title">تسجيل المواد ومعرفة المصاريف</h3>
+                    </a>
+                    
                     <a href="https://www.facebook.com/profile.php?id=61555999348153" 
                        target="_blank" 
                        rel="noopener noreferrer"
