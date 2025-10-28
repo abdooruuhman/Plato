@@ -2,12 +2,8 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="description" content="أسرة Plato - الصفحة الرسمية لطلاب قسم الفلسفة">
-    <meta name="theme-color" content="#2c3e50">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>أسرة Plato - قسم الفلسفة</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;700&display=swap');
         
@@ -17,19 +13,14 @@
             box-sizing: border-box;
         }
         
-        html {
-            scroll-behavior: smooth;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-        
         body {
             font-family: 'Tajawal', sans-serif;
             background: linear-gradient(135deg, #2c3e50 0%, #4a5568 100%);
             min-height: 100vh;
-            padding: 15px;
+            padding: 20px;
             position: relative;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
         
         /* Greek Pattern Background */
@@ -75,14 +66,14 @@
         /* Header */
         .header {
             text-align: center;
-            padding: 30px 15px;
-            margin-bottom: 50px;
+            padding: 40px 20px;
+            margin-bottom: 60px;
             position: relative;
         }
         
         .logo {
             font-family: 'Amiri', serif;
-            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-size: 3.5rem;
             font-weight: 700;
             color: #fff;
             text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
@@ -90,7 +81,6 @@
             position: relative;
             display: inline-block;
             animation: glow 3s ease-in-out infinite;
-            word-break: keep-all;
         }
         
         @keyframes glow {
@@ -109,8 +99,8 @@
         .logo::after {
             content: '◆';
             color: #DAA520;
-            margin: 0 clamp(10px, 2vw, 20px);
-            font-size: clamp(1.5rem, 3vw, 2rem);
+            margin: 0 20px;
+            font-size: 2rem;
             display: inline-block;
             animation: float 2s ease-in-out infinite;
         }
@@ -130,7 +120,7 @@
         
         .subtitle {
             color: #DAA520;
-            font-size: clamp(1rem, 2vw, 1.2rem);
+            font-size: 1.2rem;
             font-weight: 300;
             letter-spacing: 2px;
             animation: fadeInUp 1.5s ease-out 0.3s both;
@@ -180,7 +170,7 @@
         .section-title {
             text-align: center;
             color: #fff;
-            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-size: 2rem;
             margin-bottom: 40px;
             font-family: 'Amiri', serif;
             position: relative;
@@ -214,15 +204,15 @@
         
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
             padding: 20px 0;
         }
         
         .card {
             background: linear-gradient(145deg, #ffffff 0%, #f5f5f5 100%);
             border-radius: 15px;
-            padding: 30px 20px;
+            padding: 30px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -232,10 +222,6 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             opacity: 0;
             animation: cardAppear 0.6s ease-out forwards;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-            -webkit-tap-highlight-color: transparent;
         }
         
         .card:nth-child(1) { animation-delay: 0.2s; }
@@ -266,15 +252,11 @@
             transition: left 0.6s;
         }
         
-        .card:hover::before,
-        .card:focus::before,
-        .card:active::before {
+        .card:hover::before {
             left: 100%;
         }
         
-        .card:hover,
-        .card:focus,
-        .card:active {
+        .card:hover {
             transform: translateY(-10px);
             border-color: #DAA520;
             box-shadow: 0 15px 40px rgba(218, 165, 32, 0.4);
@@ -283,24 +265,21 @@
         .card.primary {
             background: linear-gradient(145deg, #c0392b 0%, #e74c3c 100%);
             color: white;
+            grid-column: span 1;
         }
         
-        .card.primary:hover,
-        .card.primary:focus,
-        .card.primary:active {
+        .card.primary:hover {
             border-color: #fff;
         }
         
         .card-icon {
-            font-size: clamp(2.5rem, 5vw, 3rem);
+            font-size: 3rem;
             margin-bottom: 15px;
             transition: transform 0.3s;
             display: inline-block;
         }
         
-        .card:hover .card-icon,
-        .card:focus .card-icon,
-        .card:active .card-icon {
+        .card:hover .card-icon {
             transform: scale(1.2) rotate(5deg);
             animation: bounce 0.6s ease;
         }
@@ -311,28 +290,37 @@
         }
         
         .card-title {
-            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            font-size: 1.3rem;
             font-weight: 700;
             margin-bottom: 10px;
             font-family: 'Amiri', serif;
-            line-height: 1.4;
         }
         
         .card.primary .card-title {
             color: #fff;
         }
         
+        .card-description {
+            font-size: 0.95rem;
+            color: #666;
+            opacity: 0.9;
+        }
+        
+        .card.primary .card-description {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
         /* Management Section */
         .management-section {
             margin-top: 80px;
-            padding: 40px 15px;
+            padding: 40px 20px;
             border-top: 3px solid rgba(218, 165, 32, 0.3);
         }
         
         .management-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
             max-width: 700px;
             margin: 0 auto;
         }
@@ -340,7 +328,7 @@
         .management-card {
             background: linear-gradient(145deg, #2c3e50 0%, #34495e 100%);
             border-radius: 15px;
-            padding: 30px 20px;
+            padding: 30px;
             text-align: center;
             position: relative;
             border: 2px solid #DAA520;
@@ -367,7 +355,7 @@
         
         .management-role {
             color: #DAA520;
-            font-size: clamp(0.9rem, 2vw, 1rem);
+            font-size: 1rem;
             font-weight: 300;
             margin-bottom: 10px;
             letter-spacing: 1px;
@@ -375,113 +363,52 @@
         
         .management-name {
             color: #fff;
-            font-size: clamp(1.3rem, 2.5vw, 1.5rem);
+            font-size: 1.5rem;
             font-weight: 700;
             font-family: 'Amiri', serif;
-            line-height: 1.4;
         }
         
         /* Footer */
         .footer {
             text-align: center;
             color: rgba(255, 255, 255, 0.6);
-            padding: 30px 15px 20px;
+            padding: 30px 0 20px;
             margin-top: 60px;
-            font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+            font-size: 0.9rem;
         }
         
-        /* Responsive adjustments */
+        /* Responsive */
         @media (max-width: 768px) {
-            body {
-                padding: 10px;
+            .logo {
+                font-size: 2.5rem;
             }
             
-            .header {
-                padding: 20px 10px;
-                margin-bottom: 30px;
+            .logo::before,
+            .logo::after {
+                margin: 0 10px;
+                font-size: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .cards-grid {
+                grid-template-columns: 1fr;
             }
             
             .column-decoration {
                 display: none;
             }
-            
-            .cards-grid {
-                gap: 20px;
-            }
-            
-            .card {
-                padding: 25px 15px;
-            }
-            
-            .management-section {
-                margin-top: 60px;
-                padding: 30px 10px;
-            }
-            
-            .management-grid {
-                gap: 25px;
-            }
         }
         
         @media (max-width: 480px) {
-            .cards-grid {
-                grid-template-columns: 1fr;
-                gap: 15px;
+            .logo {
+                font-size: 2rem;
             }
             
             .card {
-                padding: 20px 15px;
-            }
-            
-            .management-card {
-                padding: 25px 15px;
-            }
-        }
-        
-        /* Touch device optimization */
-        @media (hover: none) and (pointer: coarse) {
-            .card:active {
-                transform: scale(0.98);
-            }
-        }
-        
-        /* High contrast mode support */
-        @media (prefers-contrast: high) {
-            .card {
-                border: 3px solid #000;
-            }
-            
-            .management-card {
-                border: 3px solid #DAA520;
-            }
-        }
-        
-        /* Reduced motion for accessibility */
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-        
-        /* Print styles */
-        @media print {
-            body {
-                background: white;
-            }
-            
-            body::before {
-                display: none;
-            }
-            
-            .card,
-            .management-card {
-                box-shadow: none;
-                border: 2px solid #000;
-                page-break-inside: avoid;
+                padding: 25px;
             }
         }
     </style>
@@ -489,91 +416,69 @@
 <body>
     <div class="container">
         <!-- Header -->
-        <header class="header" role="banner">
-            <div class="column-decoration column-left" aria-hidden="true"></div>
-            <div class="column-decoration column-right" aria-hidden="true"></div>
+        <header class="header">
+            <div class="column-decoration column-left"></div>
+            <div class="column-decoration column-right"></div>
             <h1 class="logo">أسرة Plato</h1>
             <p class="subtitle">قسم الفلسفة</p>
         </header>
         
         <!-- Main Links Section -->
-        <main>
-            <section class="links-section" aria-labelledby="links-title">
-                <h2 id="links-title" class="section-title">الروابط الرسمية</h2>
-                
-                <div class="cards-grid">
-                    <!-- Primary Card - Facebook Page -->
-                    <a href="https://www.facebook.com/profile.php?id=61555999348153" 
-                       target="_blank" 
-                       rel="noopener noreferrer"
-                       class="card primary"
-                       aria-label="صفحة الأسرة الرسمية على فيسبوك">
-                        <div class="card-icon" aria-hidden="true">✅</div>
-                        <h3 class="card-title">صفحة الأسرة الرسمية</h3>
-                    </a>
-                    
-                    <!-- Level 1 Group -->
-                    <a href="https://www.facebook.com/share/g/1A2m5fSr12/" 
-                       target="_blank" 
-                       rel="noopener noreferrer"
-                       class="card"
-                       aria-label="جروب المستوى الأول على فيسبوك">
-                        <div class="card-icon" aria-hidden="true">1️⃣</div>
-                        <h3 class="card-title">جروب المستوى الأول</h3>
-                    </a>
-                    
-                    <!-- Level 2 Group -->
-                    <a href="https://www.facebook.com/share/g/1BZhYCHY5k/" 
-                       target="_blank" 
-                       rel="noopener noreferrer"
-                       class="card"
-                       aria-label="جروب المستوى الثاني على فيسبوك">
-                        <div class="card-icon" aria-hidden="true">2️⃣</div>
-                        <h3 class="card-title">جروب المستوى الثاني</h3>
-                    </a>
-                    
-                    <!-- Level 3 Group -->
-                    <a href="https://www.facebook.com/share/g/14MhLeGqjY9/" 
-                       target="_blank" 
-                       rel="noopener noreferrer"
-                       class="card"
-                       aria-label="جروب المستوى الثالث على فيسبوك">
-                        <div class="card-icon" aria-hidden="true">3️⃣</div>
-                        <h3 class="card-title">جروب المستوى الثالث</h3>
-                    </a>
-                    
-                    <!-- Level 4 Group -->
-                    <a href="https://www.facebook.com/share/g/1F7vsSExt9/" 
-                       target="_blank" 
-                       rel="noopener noreferrer"
-                       class="card"
-                       aria-label="جروب المستوى الرابع على فيسبوك">
-                        <div class="card-icon" aria-hidden="true">4️⃣</div>
-                        <h3 class="card-title">جروب المستوى الرابع</h3>
-                    </a>
-                </div>
-            </section>
+        <section class="links-section">
+            <h2 class="section-title">الروابط الرسمية</h2>
             
-            <!-- Management Section -->
-            <section class="management-section" aria-labelledby="management-title">
-                <h2 id="management-title" class="section-title">إدارة الأسرة</h2>
+            <div class="cards-grid">
+                <!-- Primary Card - Facebook Page -->
+                <a href="https://www.facebook.com/profile.php?id=61555999348153" target="_blank" class="card primary" style="text-decoration: none;">
+                    <div class="card-icon">✅</div>
+                    <h3 class="card-title">صفحة الأسرة الرسمية</h3>
+                </a>
                 
-                <div class="management-grid">
-                    <div class="management-card">
-                        <p class="management-role">مقرر الأسرة</p>
-                        <h3 class="management-name">يوسف صبري</h3>
-                    </div>
-                    
-                    <div class="management-card">
-                        <p class="management-role">نائب مقرر الأسرة</p>
-                        <h3 class="management-name">منار رضا</h3>
-                    </div>
+                <!-- Level 1 Group -->
+                <a href="https://www.facebook.com/share/g/1A2m5fSr12/" target="_blank" class="card" style="text-decoration: none; color: inherit;">
+                    <div class="card-icon">1️⃣</div>
+                    <h3 class="card-title">جروب المستوى الأول</h3>
+                </a>
+                
+                <!-- Level 2 Group -->
+                <a href="https://www.facebook.com/share/g/1BZhYCHY5k/" target="_blank" class="card" style="text-decoration: none; color: inherit;">
+                    <div class="card-icon">2️⃣</div>
+                    <h3 class="card-title">جروب المستوى الثاني</h3>
+                </a>
+                
+                <!-- Level 3 Group -->
+                <a href="https://www.facebook.com/share/g/14MhLeGqjY9/" target="_blank" class="card" style="text-decoration: none; color: inherit;">
+                    <div class="card-icon">3️⃣</div>
+                    <h3 class="card-title">جروب المستوى الثالث</h3>
+                </a>
+                
+                <!-- Level 4 Group -->
+                <a href="https://www.facebook.com/share/g/1F7vsSExt9/" target="_blank" class="card" style="text-decoration: none; color: inherit;">
+                    <div class="card-icon">4️⃣</div>
+                    <h3 class="card-title">جروب المستوى الرابع</h3>
+                </a>
+            </div>
+        </section>
+        
+        <!-- Management Section -->
+        <section class="management-section">
+            <h2 class="section-title">إدارة الأسرة</h2>
+            
+            <div class="management-grid">
+                <div class="management-card">
+                    <p class="management-role">مقرر الأسرة</p>
+                    <h3 class="management-name">يوسف صبري</h3>
                 </div>
-            </section>
-        </main>
+                
+                <div class="management-card">
+                    <p class="management-role">نائب مقرر الأسرة</p>
+                    <h3 class="management-name">منار رضا</h3>
+                </div>
+            </div>
+        </section>
         
         <!-- Footer -->
-        <footer class="footer" role="contentinfo">
+        <footer class="footer">
             <p>أسرة Plato © 2025 - جميع الحقوق محفوظة</p>
         </footer>
     </div>
