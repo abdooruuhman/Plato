@@ -6,13 +6,10 @@
     <meta name="description" content="أسرة Plato - الصفحة الرسمية لطلاب قسم الفلسفة">
     <meta name="theme-color" content="#2c3e50">
     <title>أسرة Plato - قسم الفلسفة</title>
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet">
-    
     <style>
-        /* @import تم إزالة قاعدة  */
+        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;700&display=swap');
         
         * {
             margin: 0;
@@ -43,7 +40,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-image:  
+            background-image: 
                 repeating-linear-gradient(90deg, transparent, transparent 48px, rgba(218, 165, 32, 0.03) 48px, rgba(218, 165, 32, 0.03) 50px),
                 repeating-linear-gradient(0deg, transparent, transparent 48px, rgba(218, 165, 32, 0.03) 48px, rgba(218, 165, 32, 0.03) 50px);
             pointer-events: none;
@@ -65,11 +62,11 @@
         }
         
         @keyframes fadeIn {
-            from {  
+            from { 
                 opacity: 0;
                 transform: translateY(30px);
             }
-            to {  
+            to { 
                 opacity: 1;
                 transform: translateY(0);
             }
@@ -94,15 +91,14 @@
             display: inline-block;
             animation: glow 3s ease-in-out infinite;
             word-break: keep-all;
-            overflow-wrap: break-word; /* تحسين: لضمان عدم الكسر في الشاشات الضيقة جداً */
         }
         
         @keyframes glow {
-            0%, 100% {  
+            0%, 100% { 
                 text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3),
                              0 0 20px rgba(218, 165, 32, 0.3);
             }
-            50% {  
+            50% { 
                 text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3),
                              0 0 30px rgba(218, 165, 32, 0.6),
                              0 0 40px rgba(218, 165, 32, 0.4);
@@ -218,8 +214,7 @@
         
         .cards-grid {
             display: grid;
-            /* تحسين: تبسيط قاعدة التجاوب لجعلها أوضح وأكثر قياسية */
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
             gap: 25px;
             padding: 20px 0;
         }
@@ -336,8 +331,7 @@
         
         .management-grid {
             display: grid;
-            /* تحسين: تبسيط قاعدة التجاوب */
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
             gap: 30px;
             max-width: 700px;
             margin: 0 auto;
@@ -346,7 +340,7 @@
         .management-card {
             background: linear-gradient(145deg, #2c3e50 0%, #34495e 100%);
             border-radius: 15px;
-            padding: 30px 20px;
+            padding: 45px 20px 30px 20px; /* <--- هذا هو السطر الذي تم تعديله */
             text-align: center;
             position: relative;
             border: 2px solid #DAA520;
@@ -370,32 +364,7 @@
             background: #2c3e50;
             padding: 0 15px;
         }
-
-        /* * تحسين: إضافة كلاس لتمييز بطاقة "مقرر الأسرة" 
-         */
-        .management-card--leader {
-            border-color: #f1c40f; /* لون ذهبي أكثر إشراقاً */
-            border-width: 3px;
-            transform: scale(1.02); /* جعلها أكبر قليلاً بشكل افتراضي */
-            box-shadow: 0 12px 35px rgba(241, 196, 15, 0.25);
-        }
         
-        .management-card--leader:hover {
-            transform: translateY(-5px) scale(1.03); /* تحسين تأثير الـ hover */
-            box-shadow: 0 15px 40px rgba(241, 196, 15, 0.35);
-        }
-        
-        .management-card--leader .management-role {
-            color: #f1c40f;
-            font-weight: 700; /* جعل اللقب أثقل */
-            font-size: clamp(1rem, 2vw, 1.1rem);
-        }
-        
-        .management-card--leader .management-name {
-            color: #ffffff; /* التأكيد على أن الاسم أبيض ناصع */
-        }
-        /* نهاية التحسين */
-
         .management-role {
             color: #DAA520;
             font-size: clamp(0.9rem, 2vw, 1rem);
@@ -454,19 +423,12 @@
             }
         }
         
-        /* * تحسين: تم حذف هذا الجزء لأنه أصبح غير ضروري 
-         * بعد تبسيط قاعدة الـ grid-template-columns الرئيسية
-         */
-        /*
         @media (max-width: 480px) {
             .cards-grid {
                 grid-template-columns: 1fr;
                 gap: 15px;
             }
-        }
-        */
-
-        @media (max-width: 480px) {
+            
             .card {
                 padding: 20px 15px;
             }
@@ -543,8 +505,8 @@
                        rel="noopener noreferrer"
                        class="card primary"
                        aria-label="صفحة الأسرة الرسمية على فيسبوك">
-                         <div class="card-icon" aria-hidden="true">✅</div>
-                         <h3 class="card-title">صفحة الأسرة الرسمية</h3>
+                        <div class="card-icon" aria-hidden="true">✅</div>
+                        <h3 class="card-title">صفحة الأسرة الرسمية</h3>
                     </a>
                     
                     <a href="https://www.facebook.com/share/g/1A2m5fSr12/" 
@@ -552,8 +514,8 @@
                        rel="noopener noreferrer"
                        class="card"
                        aria-label="جروب المستوى الأول على فيسبوك">
-                         <div class="card-icon" aria-hidden="true">1️⃣</div>
-                         <h3 class="card-title">جروب المستوى الأول</h3>
+                        <div class="card-icon" aria-hidden="true">1️⃣</div>
+                        <h3 class="card-title">جروب المستوى الأول</h3>
                     </a>
                     
                     <a href="https://www.facebook.com/share/g/1BZhYCHY5k/" 
@@ -561,8 +523,8 @@
                        rel="noopener noreferrer"
                        class="card"
                        aria-label="جروب المستوى الثاني على فيسبوك">
-                         <div class="card-icon" aria-hidden="true">2️⃣</div>
-                         <h3 class="card-title">جروب المستوى الثاني</h3>
+                        <div class="card-icon" aria-hidden="true">2️⃣</div>
+                        <h3 class="card-title">جروب المستوى الثاني</h3>
                     </a>
                     
                     <a href="https://www.facebook.com/share/g/14MhLeGqjY9/" 
@@ -570,8 +532,8 @@
                        rel="noopener noreferrer"
                        class="card"
                        aria-label="جروب المستوى الثالث على فيسبوك">
-                         <div class="card-icon" aria-hidden="true">3️⃣</div>
-                         <h3 class="card-title">جروب المستوى الثالث</h3>
+                        <div class="card-icon" aria-hidden="true">3️⃣</div>
+                        <h3 class="card-title">جروب المستوى الثالث</h3>
                     </a>
                     
                     <a href="https://www.facebook.com/share/g/1F7vsSExt9/" 
@@ -579,8 +541,8 @@
                        rel="noopener noreferrer"
                        class="card"
                        aria-label="جروب المستوى الرابع على فيسبوك">
-                         <div class="card-icon" aria-hidden="true">4️⃣</div>
-                         <h3 class="card-title">جروب المستوى الرابع</h3>
+                        <div class="card-icon" aria-hidden="true">4️⃣</div>
+                        <h3 class="card-title">جروب المستوى الرابع</h3>
                     </a>
                 </div>
             </section>
@@ -589,8 +551,7 @@
                 <h2 id="management-title" class="section-title">إدارة الأسرة</h2>
                 
                 <div class="management-grid">
-                    
-                    <div class="management-card management-card--leader">
+                    <div class="management-card">
                         <p class="management-role">مقرر الأسرة</p>
                         <h3 class="management-name">يوسف صبري</h3>
                     </div>
